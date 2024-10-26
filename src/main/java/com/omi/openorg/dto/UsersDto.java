@@ -1,19 +1,31 @@
 package com.omi.openorg.dto;
 
 
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 
 @ToString
-@RequiredArgsConstructor
 public class UsersDto {
+
+    Long userId;
     String userName;
     String userType;
 
-    public UsersDto(String userName, String userType) {
+    public UsersDto() {
+    }
+
+    public UsersDto(Long userId, String userName, String userType) {
+        this.userId = userId;
         this.userName = userName;
         this.userType = userType;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {

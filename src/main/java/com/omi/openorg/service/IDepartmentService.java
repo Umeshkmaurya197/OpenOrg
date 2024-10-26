@@ -7,5 +7,6 @@ public interface IDepartmentService {
 
     DepartmentDto saveDepartment(DepartmentDto departmentDto);
 
+    DepartmentDto getDepartmentByCode(String departmentCode);
 }
 

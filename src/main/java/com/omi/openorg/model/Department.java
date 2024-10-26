@@ -8,7 +8,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Entity(name = "DEPARTMENT_MB")
+@Entity(name = "DEPARTMENTS_MB")
 public class Department {
 
     @Id

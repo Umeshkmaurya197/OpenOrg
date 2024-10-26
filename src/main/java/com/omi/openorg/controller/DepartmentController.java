@@ -19,12 +19,22 @@ public class DepartmentController {
     @Autowired
     private IDepartmentService departmentService;
 
+    //  http://localhost:8080/openOrg/departments/addDepartment
     @PostMapping("/addDepartment")
     public ResponseEntity<DepartmentDto> saveDepartment(@RequestBody DepartmentDto departmentDto) {
         log.info("Entered Into saveDepartment => departmentDto :  " + departmentDto);
         DepartmentDto savedDepartment = departmentService.saveDepartment(departmentDto);
         log.info("Exiting  from saveDepartment => savedDepartment :  " + savedDepartment);
         return new ResponseEntity<>(savedDepartment, HttpStatus.CREATED);
+    }
+
+    //  http://localhost:8080/openOrg/departments/getDepartmentById/{department-code}
+    @GetMapping("getDepartmentById/{departmentCode}")
+    public ResponseEntity<DepartmentDto> getDepartment(@PathVariable("departmentCode") String departmentCode){
+        log.info("Entered Into getDepartment => departmentCode :  " + departmentCode);
+        DepartmentDto departmentDto = departmentService.getDepartmentByCode(departmentCode);
+        log.info("Exiting  from getDepartment => getDepartment :  " + departmentDto);
+        return new ResponseEntity<>(departmentDto, HttpStatus.OK);
     }
 
 

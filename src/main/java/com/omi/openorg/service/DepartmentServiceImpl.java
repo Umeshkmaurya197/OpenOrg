@@ -28,6 +28,17 @@ public class DepartmentServiceImpl implements IDepartmentService{
         log.info("Exiting from saveDepartment => savedDepartmentDto : " + savedDepartmentDto);
         return savedDepartmentDto;
     }
+
+    @Override
+    public DepartmentDto getDepartmentByCode(String departmentCode) {
+        log.info("Entered into getDepartmentByCode => departmentCode : " + departmentCode);
+        Department department = departmentRepository.findByDepartmentCode(departmentCode);
+        log.info("Entered into getDepartmentByCode => department : " + department);
+        DepartmentDto departmentDto = DepartmentMapper.mapToDepartmentDto(department);
+        log.info("Entered into getDepartmentByCode => departmentDto : " + departmentDto);
+        return departmentDto;
+    }
+
 }
 
 
