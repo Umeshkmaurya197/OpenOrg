@@ -24,7 +24,7 @@ public class DepartmentController {
     public ResponseEntity<DepartmentDto> saveDepartment(@RequestBody DepartmentDto departmentDto) {
         log.info("Entered Into saveDepartment => departmentDto :  " + departmentDto);
         DepartmentDto savedDepartment = departmentService.saveDepartment(departmentDto);
-        log.info("Exiting  from saveDepartment => savedDepartment :  " + savedDepartment);
+        log.info("Exiting from saveDepartment => savedDepartment :  " + savedDepartment);
         return new ResponseEntity<>(savedDepartment, HttpStatus.CREATED);
     }
 
@@ -33,7 +33,7 @@ public class DepartmentController {
     public ResponseEntity<DepartmentDto> getDepartment(@PathVariable("departmentCode") String departmentCode){
         log.info("Entered Into getDepartment => departmentCode :  " + departmentCode);
         DepartmentDto departmentDto = departmentService.getDepartmentByCode(departmentCode);
-        log.info("Exiting  from getDepartment => getDepartment :  " + departmentDto);
+        log.info("Exiting from getDepartment => getDepartment :  " + departmentDto);
         return new ResponseEntity<>(departmentDto, HttpStatus.OK);
     }
 
